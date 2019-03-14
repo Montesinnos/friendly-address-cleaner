@@ -3,13 +3,13 @@ plugins {
     id 'maven-publish'
     id 'java'
     id 'idea'
-    id 'org.unbroken-dome.test-sets' version '1.5.1'
+    id 'org.unbroken-dome.test-sets' version '2.1.1'
     id 'signing'
     id 'java-library'
 }
 
 group 'com.montesinnos.friendly'
-version '0.1.0-SNAPSHOT'
+version '0.1.4-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
@@ -33,11 +33,16 @@ publishing {
 }
 
 dependencies {
-    compile "com.montesinnos.friendly:commons:0.1.0-SNAPSHOT"
+    compile "com.montesinnos.friendly:commons:0.1.6-SNAPSHOT"
 
-    testCompile 'org.junit.jupiter:junit-jupiter-api:5.3.1'
-    testCompile 'org.junit.jupiter:junit-jupiter-params:5.3.1'
-    testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
+    // TEST
+
+    // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.4.0'
+    // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.4.0'
+    // https://mvnrepository.com/artifact/org.junit.platform/junit-platform-launcher
+    testCompile group: 'org.junit.platform', name: 'junit-platform-launcher', version: '1.4.0'
 }
 
 test {
