@@ -1,27 +1,14 @@
 package com.montesinnos.friendly.addresscleaner.field;
 
-import com.montesinnos.friendly.commons.lookup.LookupMap;
-
+import java.io.Serializable;
 import java.util.Optional;
 
-public abstract class FieldNormalizer {
-    private final LookupMap lookupMap;
+public abstract class FieldNormalizer implements Serializable {
 
-    public FieldNormalizer() {
-        this.lookupMap = load();
-    }
+    public abstract String normalize(final String input);
 
-    public abstract LookupMap load();
-
-    public Optional<String> get(final String input) {
-        return lookupMap.get(input);
-    }
-
-    public Optional<String> get(final Optional<String> input) {
-        if (input.isPresent()) {
-            return lookupMap.get(input.get());
-        }
-        return Optional.empty();
+    public Optional<String> tryToNormalize(final String input) {
+        return Optional.ofNullable(normalize(input));
     }
 
 }

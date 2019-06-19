@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class State extends FieldNormalizer {
+public class StateLookup extends FieldLookup {
     @Override
     public LookupMap load() {
         final Map<String, String> stateNames = new HashMap<>();

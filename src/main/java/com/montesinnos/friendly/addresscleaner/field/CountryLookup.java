@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 import static com.montesinnos.friendly.commons.lookup.LookupMapFactory.fromMaps;
 
-public class Country extends FieldNormalizer {
+public class CountryLookup extends FieldLookup {
     @Override
     public LookupMap load() {
 
@@ -31,6 +31,5 @@ public class Country extends FieldNormalizer {
         extraCountries.put("The Netherlands", "NL");
 
         return fromMaps(countryNames, countryCodes, extraCountries);
-
     }
 }

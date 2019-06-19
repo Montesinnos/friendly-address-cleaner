@@ -6,12 +6,12 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class StateTest {
+class StateLookupTest {
 
     @Test
     void cleanTest() {
-        final State state = new State();
-        assertEquals(Optional.of("CA"), state.get("cal iforniA"));
-        assertEquals(Optional.of("CA"), state.get("ca"));
+        final StateLookup stateLookup = new StateLookup();
+        assertEquals(Optional.of("CA"), stateLookup.get("cal iforniA"));
+        assertEquals(Optional.of("CA"), stateLookup.get("ca"));
     }
 }

@@ -6,11 +6,11 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class CountryTest {
+class CountryLookupTest {
 
     @Test
     void cleanTest() {
-        final Country lookup = new Country();
+        final CountryLookup lookup = new CountryLookup();
         assertEquals(Optional.of("US"), lookup.get("United States"));
         assertEquals(Optional.of("US"), lookup.get("UnitedStates"));
         assertEquals(Optional.of("US"), lookup.get("USA"));
